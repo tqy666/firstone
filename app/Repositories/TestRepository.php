@@ -8,23 +8,23 @@
 namespace App\Repositories;
 
 use App\Model\Luck;
-use App\Model\Users;
+use App\Model\User;
 
 class TestRepository{
 
-    private $Users;
+    private $User;
     private $Luck;
 
-    public function __construct(Users $users,Luck $luck)
+    public function __construct(User $user,Luck $luck)
     {
-         $this->Users=$users;
+         $this->User=$user;
          $this->Luck=$luck;
 
     }
 
     public function accessdata(){
 
-        $result = $this->Users->with('userluck')->get();
+        $result = $this->User->with('userluck')->get();
 
         return $result;
     }
