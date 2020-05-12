@@ -13,11 +13,26 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+//
+//
+//Route::get('/test', function () {
+//    echo 111;
+//});
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version('v1',function ($api){
+
+    $api->group(['namespace'=>'App\Http\Controllers\V1'],function ($api){
+
+        //测试接口
+       $api->get('testdata','TestController@testdata');
+
+    });
+
+
 });
 
 
-Route::get('/test', function () {
-    echo 111;
-});
