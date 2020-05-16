@@ -231,6 +231,10 @@ return [
 
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
 
+        'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
+        'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
+
+
     ],
 
 ];

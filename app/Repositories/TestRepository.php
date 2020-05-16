@@ -30,4 +30,13 @@ class TestRepository{
     }
 
 
+    public function checkuser($data){
+
+        $user = $this->User->where('name',$data['name'])->first();
+
+        return $user;
+
+    }
+
+
 }

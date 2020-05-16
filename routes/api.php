@@ -27,8 +27,17 @@ $api->version('v1',function ($api){
 
     $api->group(['namespace'=>'App\Http\Controllers\V1'],function ($api){
 
-        //测试接口
-       $api->get('testdata','TestController@testdata');
+        //登录接口测试
+        $api->post('userlogin','TestController@userlogin');
+
+        $api->group(['middleware'=>'apiAuth'],function ($api){
+
+            //测试接口
+            $api->get('testdata','TestController@testdata');
+
+        });
+
+
 
     });
 
