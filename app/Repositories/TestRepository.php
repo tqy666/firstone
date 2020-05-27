@@ -7,8 +7,11 @@
  */
 namespace App\Repositories;
 
+use App\Exports\UsersExport;
 use App\Model\Luck;
 use App\Model\User;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class TestRepository{
 
@@ -38,5 +41,21 @@ class TestRepository{
 
     }
 
+
+    public function expostexcel(){
+
+        $alldata = $this->User->get();
+        $data[0] =['姓名','email','id'];
+        foreach ($alldata as $key=>$val){
+            $key ++;
+            $data[$key]['name']=$val->name;
+            $data[$key]['email']=$val->email;
+            $data[$key]['id'] =$val->id;
+
+        }
+         return $data;
+
+
+    }
 
 }

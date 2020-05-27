@@ -42,4 +42,13 @@ class TestController extends Controller
 
     }
 
+    //excel导出
+    public function exportdata (){
+
+        $result = $this->testRepository->expostexcel();
+
+        return $result;
+
+    }
+
 }

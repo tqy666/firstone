@@ -34,7 +34,8 @@ $api->version('v1',function ($api){
 
             //测试接口
             $api->get('testdata','TestController@testdata');
-
+            //excel
+            $api->get('exportdata','TestController@exportdata');
         });
 
 
