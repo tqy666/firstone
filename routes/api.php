@@ -30,12 +30,17 @@ $api->version('v1',function ($api){
         //登录接口测试
         $api->post('userlogin','TestController@userlogin');
 
+        $api->get('redisdata','TestController@redisdata');
+
         $api->group(['middleware'=>'apiAuth'],function ($api){
 
             //测试接口
             $api->get('testdata','TestController@testdata');
             //excel
             $api->get('exportdata','TestController@exportdata');
+            //catch
+
+
         });
 
 

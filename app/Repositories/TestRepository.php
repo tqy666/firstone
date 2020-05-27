@@ -10,6 +10,7 @@ namespace App\Repositories;
 use App\Exports\UsersExport;
 use App\Model\Luck;
 use App\Model\User;
+use Illuminate\Support\Facades\Cache;
 use Maatwebsite\Excel\Facades\Excel;
 
 
